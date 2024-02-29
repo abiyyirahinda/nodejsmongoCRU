@@ -1,10 +1,13 @@
 const express = require('express')
 const bodyparser = require('body-parser')
+const dotenv = require('dotenv'); 
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = "mongodb+srv://muhammadabiyyi73:Vh7qgMQJzyUWCs3W@cluster0.nzezvxf.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri, {
     serverApi: {

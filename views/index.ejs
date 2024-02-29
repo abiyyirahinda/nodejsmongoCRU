@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE CRUD</title>
+</head>
+<body>
+    <a href="/newcustomer">New Customer</a>
+    <table border="1">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        <% customers.forEach((customer) => { %>
+            <tr>
+                <td><%= customer.name %></td>
+                <td><%= customer.email %></td>
+                <td><a href="/editcustomer/<%= customer._id %>">Edit</a></td>
+                
+            </tr>
+            <% }); %>
+
+    </table>
+</body>
+</html>
